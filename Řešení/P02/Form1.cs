@@ -24,28 +24,25 @@ namespace P02
             int n = Convert.ToInt32(textBox1.Text);
             Random rnd = new Random();
             int[] pole = new int[n];
-            for(int v = 0; v < n; v++)
+            for (int v = 0; v < n; v++)
             {
                 pole[v] = rnd.Next(1, 11);
                 listBox1.Items.Add(pole[v]);
             }
+            Array.Sort(pole);
+            int max = pole[0];
+            int min = pole[n-1];
+            int index_max = Array.IndexOf(max);
+            int max2 = pole[index_max - 1];
             if (radioButton1.Checked)
-            {
-                Array.Sort(pole);
                 Array.Reverse(pole);
-                for (int v = 0; v < n; v++)
-                {
-                    listBox2.Items.Add(pole[v]);
-                }
-            }
-            else
+            for (int v = 0; v < n; v++)
             {
-                Array.Sort(pole);
-                for (int v = 0; v < n; v++)
-                {
-                    listBox2.Items.Add(pole[v]);
-                }
+                listBox2.Items.Add(pole[v]);
             }
+        
+            MessageBox.Show("2 největší číslo je " + max2 + " a 2 nejmenší je " + min2, "2.max a min", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
     }
 }

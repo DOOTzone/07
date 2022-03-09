@@ -30,10 +30,12 @@ namespace P02
                 listBox1.Items.Add(pole[v]);
             }
             Array.Sort(pole);
-            int max = pole[0];
-            int min = pole[n-1];
-            int index_max = Array.IndexOf(max);
+            int max = pole[n-1];
+            int min = pole[0];
+            int index_max = Array.IndexOf(pole,max);
+            int index_min = Array.LastIndexOf(pole,min);
             int max2 = pole[index_max - 1];
+            int min2 = pole[index_min + 1];
             if (radioButton1.Checked)
                 Array.Reverse(pole);
             for (int v = 0; v < n; v++)

@@ -23,6 +23,7 @@ namespace P03
         }
         int[] pole_a;
         int[] pole_b;
+        int[] pole_c;
         private void button1_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
@@ -60,7 +61,7 @@ namespace P03
         private void button2_Click(object sender, EventArgs e)
         {
             int v = pole_a.Length + pole_b.Length;
-            int[] pole_c = new int[v];
+            pole_c = new int[v];
             pole_c = pole_a.Concat(pole_b).ToArray();
             for(int b = 0; b < v; b++)
             {
@@ -68,6 +69,27 @@ namespace P03
             }
             Array.Sort(pole_c);
             Array.Reverse(pole_c);
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            int[] pole_d = new int[pole_c.Length];
+            pole_c.CopyTo(pole_d, 0);
+            pole_d = pole_d.Distinct().ToArray();
+            for(int l = 0; l < pole_d.Length; l++)
+            {
+                listBox4.Items.Add(pole_d[l]);
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            int[] pole_e = new int[pole_c.Length];
+            pole_e = pole_a.Intersect(pole_b).ToArray();
+            for(int k = 0; k < pole_e.Length; k++)
+            {
+                listBox5.Items.Add(pole_e[k]);
+            }
         }
     }
 }

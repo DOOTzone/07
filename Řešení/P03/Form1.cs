@@ -21,19 +21,20 @@ namespace P03
         {
            
         }
-
+        int[] pole_a;
+        int[] pole_b;
         private void button1_Click(object sender, EventArgs e)
         {
             Random rnd = new Random();
             int n = Convert.ToInt32(textBox1.Text);
-            int[] pole_a = new int[n];
+            pole_a = new int[n];
             for (int v = 0; v < n; v++)
             {
                 pole_a[v] = rnd.Next(3, 11);
                 listBox1.Items.Add(pole_a[v]);
             }
             int m = Convert.ToInt32(textBox2.Text);
-            int[] pole_b = new int[m];
+            pole_b = new int[m];
             for (int c = 0; c < m; c++)
             {
                 pole_b[c] = rnd.Next(3, 11);
@@ -43,6 +44,8 @@ namespace P03
             Array.Reverse(pole_a);
             Array.Sort(pole_b);
             Array.Reverse(pole_b);
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
             for (int v = 0; v < n; v++)
             {
                 listBox1.Items.Add(pole_a[v]);
@@ -53,10 +56,18 @@ namespace P03
                 listBox2.Items.Add(pole_b[c]);
             }
         }
-
+        
         private void button2_Click(object sender, EventArgs e)
         {
-
+            int v = pole_a.Length + pole_b.Length;
+            int[] pole_c = new int[v];
+            pole_c = pole_a.Concat(pole_b).ToArray();
+            for(int b = 0; b < v; b++)
+            {
+                listBox3.Items.Add(pole_c[b]);
+            }
+            Array.Sort(pole_c);
+            Array.Reverse(pole_c);
         }
     }
 }

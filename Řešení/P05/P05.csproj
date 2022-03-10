@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9E559706-F3AD-4966-AEB9-7568CE0E7797}</ProjectGuid>
+    <ProjectGuid>{50BFC490-9925-4E88-ADF3-5BB5DBBC2BAD}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>P04</RootNamespace>
-    <AssemblyName>P04</AssemblyName>
+    <RootNamespace>P05</RootNamespace>
+    <AssemblyName>P05</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,9 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
